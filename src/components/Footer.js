@@ -13,4 +13,4 @@ export default function Footer() {
             <span className='title'>2020 OlgaPaw</span>
         </FooterDiv>
     );
-}
+};

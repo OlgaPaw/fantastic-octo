@@ -6,18 +6,26 @@ const Title = styled.div`
     text-align: center;
     font-weight: bold;
     background-color: ${colors.lightGrey};
-`
+`;
+
+const Content = styled.div`
+    text-align: center;
+`;
 
 const Card = styled.div`
     border: 1px solid ${colors.lightGrey};
     order: ${props => props.order};
-    flex: 1;
-`
+    flex: 0 1 14.28%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+`;
 
-export default function Day({ number }) {
+export default function Day({ number, position }) {
     return (
-        <Card order={number} >
+        <Card order={position} >
             <Title>{number}</Title>
+            <Content></Content>
         </Card>
     );
 }
