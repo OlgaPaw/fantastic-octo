@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { colors } from '../consts';
 
 const Title = styled.div`
@@ -29,3 +30,8 @@ export default function Day({ number, position }) {
     </Card>
   );
 }
+
+Day.propTypes = {
+  number: PropTypes.number.isRequired,
+  position: PropTypes.number.isRequired,
+};
