@@ -7,6 +7,5 @@ export default {
 };
 
 export const Default = () => {
-  return <Week/>;
+  return <Week />;
 };
-

@@ -9,4 +9,3 @@ export default {
 export const Default = () => {
   return <Day number={7} />;
 };
-
