@@ -55,7 +55,7 @@ export default function Calendar() {
       >
         {days.map(day => (
           <Day
-            key={`day_${weekId}_${day.date}`}
+            key={`day_${weekId}_${day.date()}`}
             number={day.date()}
             position={day.day()}
           />
