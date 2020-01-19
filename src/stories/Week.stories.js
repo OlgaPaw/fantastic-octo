@@ -42,7 +42,6 @@ export const FullWeek = () => {
 };
 
 export const FullWeekWithLarpBars = () => {
-  console.log(Bars());
   return (
     <Container>
       <Week weekId={1} days={Days()} bars={Bars()}></Week>
@@ -51,7 +50,6 @@ export const FullWeekWithLarpBars = () => {
 };
 
 export const FullWeekWithLarpBarsOverflow = () => {
-  console.log(Bars());
   return (
     <Container>
       <Week weekId={1} days={Days()} bars={Bars(10)}></Week>

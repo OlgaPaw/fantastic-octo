@@ -27,15 +27,13 @@ const SpaceItem = styled.div`
 `;
 
 function GenerateSpaces(positions) {
-  console.log(positions);
   return [...Array(7).keys()]
     .filter(n => !positions.includes(n))
-    .map(space => <SpaceItem order={space} />);
+    .map(space => <SpaceItem key={space} order={space} />);
 }
 
 export default function LarpBar(props) {
   const { name, color, positions, marginTop } = props;
-  console.log(name, color, positions, props);
   return (
     <Container marginTop={marginTop}>
       {GenerateSpaces(positions)}
@@ -50,4 +48,5 @@ LarpBar.propTypes = {
   name: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   positions: PropTypes.arrayOf(PropTypes.number).isRequired,
+  marginTop: PropTypes.oneOf(['auto', 0]).isRequired,
 };

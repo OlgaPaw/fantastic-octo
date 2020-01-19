@@ -41,6 +41,7 @@ export default function Week({ weekId, order, alignment, days, bars }) {
       <BarContainer>
         {bars.map(({ name, color, positions }, index) => (
           <LarpBar
+            key={index}
             name={name}
             color={color}
             positions={positions}
@@ -55,7 +56,7 @@ export default function Week({ weekId, order, alignment, days, bars }) {
 Week.propTypes = {
   weekId: PropTypes.number.isRequired,
   order: PropTypes.number.isRequired,
-  alignment: PropTypes.PropTypes.oneOf(['flex-end', 'flex-start']),
+  alignment: PropTypes.oneOf(['flex-end', 'flex-start']),
   days: PropTypes.arrayOf(PropTypes.instanceOf(moment)),
   bars: PropTypes.arrayOf(
     PropTypes.shape({

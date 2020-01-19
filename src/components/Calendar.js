@@ -50,6 +50,7 @@ export default function Calendar() {
   ).map(([weekId, days]) => (
     <Week
       weekId={weekId}
+      key={weekId}
       order={days[0].date()}
       alignment={days[0].date() === 1 ? 'flex-end' : 'flex-start'}
       days={days}
