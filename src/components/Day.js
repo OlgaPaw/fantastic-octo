@@ -26,7 +26,7 @@ export default function Day({ number, position }) {
   return (
     <Card order={position}>
       <Title>{number}</Title>
-      <Content></Content>
+      <Content />
     </Card>
   );
 }
