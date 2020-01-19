@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 import { colors } from '../consts';
-import moment from 'moment';
-import Day from './Day';
 import Week from './Week';
 
 const CalendarDiv = styled.div`
@@ -46,23 +45,16 @@ export default function Calendar() {
   const daysInMonth = [...Array(date.daysInMonth()).keys()].map(day =>
     moment([date.year(), date.month(), day + 1]),
   );
-  const weeks = Object.entries(groupDaysByWeeks(daysInMonth)).map(
-    ([weekId, days]) => (
-      <Week
-        key={weekId}
-        order={days[0].date()}
-        alignment={days[0].date() === 1 ? 'flex-end' : 'flex-start'}
-      >
-        {days.map(day => (
-          <Day
-            key={`day_${weekId}_${day.date()}`}
-            number={day.date()}
-            position={day.day()}
-          />
-        ))}
-      </Week>
-    ),
-  );
+  const weeks = Object.entries(
+    groupDaysByWeeks(daysInMonth),
+  ).map(([weekId, days]) => (
+    <Week
+      weekId={weekId}
+      order={days[0].date()}
+      alignment={days[0].date() === 1 ? 'flex-end' : 'flex-start'}
+      days={days}
+    ></Week>
+  ));
 
   return (
     <CalendarDiv>
